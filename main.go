@@ -1,6 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
 
 func deposit() {
 	fmt.Println("Deposite amount...")
@@ -11,7 +16,17 @@ func withDraw() {
 }
 
 func main() {
-	deposit()
+
+	var list = []string{"012671", "aavashh"}
+
+	fmt.Println("Enter account number")
+	accountHolder := bufio.NewReader(os.Stdin)
+	holder, _ := accountHolder.ReadString('\n')
+
+	value := strings.TrimSpace(holder)
+
+	if value == list[0] {
+		fmt.Println("checking")
+	}
 
 }
-
